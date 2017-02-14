@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width , initial-scale = 1 ">
+    <link rel="Stylesheet" href="E:\downloads_net\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap.min.css">
+    <script src="E:\downloads_net\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\jquery-3.1.1.min.js"></script>
+    <script src="E:\downloads_net\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\bootstrap.min.js "></script>
+    <title>JQuery Assignment</title>
+    <link rel="stylesheet" type="text/css" href="jqueryFirst.css">
+</script>
+<style >
+.carousel-inner > .item > img ,
+.carousel-inner > .item > a > img {
+  width : 100%;
+  margin: auto;
+  height: 350px;
+} 
+</style>
+  <script tpe="text/javascript">
+
+$(document).ready(function(){
+   
+/******** JQuery Animation *******/   
+    $("#submit").click(function(){
+      var div=$("#div9 #p9");
+      div.animate({left:'100px',opacity:'0.3'},"slow");
+      div.animate({left:'800px',opacity:'1.0'},"slow");
+    }); 
+
+/* ************** Chaining  ****************/
+    $("#slideImage").slideUp(10000)
+                    .slideDown(5000);
+
+
+/* ***** More Dynamic manipulations of DOM ********* */
+   $("#submit").click(function(){
+           $("#f2").hide("slow", function(){
+               alert("The form is now hidden.");
+            }); 
+        });
+
+//******************* Events and Effects **********************//
+   $("#myDropDown").on({
+    mouseover: function(){
+        $("#list").show();
+    },
+    mouseleave: function(){
+        $("#list").hide();
+    }
+    });
+
+/* ************** JQuery DOM Manipulation ****************** */
+    $("#submit").click(function(){
+    confirm("Remember Password for " + $("#user").val());
+    });
+
+    $("#submit").click(function(){
+    alert("HTML: " + $(this).html());
+     });
+
+/*Using selector to select elements & do some manipulation over them.
+          Also uses Chaining.  
+*/
+    $(".navbar a").on({
+    mouseover: function(){
+        $(this).addClass("btn btn-md btn-info").css("background-color","lightcoral").css("font-size", "18px");
+    },
+    mouseenter: function(){
+        $(this).addClass("btn btn-info").css("background-color","lightcoral").css("font-size", "18px");
+    },
+    mouseleave: function(){
+        $(this).removeClass("btn btn-info").css("background-color","antiquewhite").css("font-size", "15px");
+    }
+    });
+
+    $("#more").onclick(function(){
+      $("#hideshow").show();
+    });
+
+});
+
+</script>
+</head>
+<body>
+
+<div class="container">
+  <div class="row" id="div1">
+    <div class="col-md-3 col-sm-6"> <img src ="incredible-india.jpg"> </div> 
+    <div class="col-md-6 col-sm-12"> <p>INCREDIBLE INDIA </p></div>
+    <div class="col-md-3 col-sm-offeset-6"> <sub>Multi purpose responsive wordpress theme</sub> </div>
+  </div>
+
+
+  <div class="row" id="div2">
+  <nav class="navbar navbar-default">
+      <div class="container-fluid col-md-offset-3">
+      <ul class="nav navbar-nav" role="navigation">
+          <li><a href="#">Enquire Now</a></li>
+          <li><a href="#">Guest Experiences</a></li>
+      <li class="dropdown" id="myDropDown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Deals
+           <ul class="dropdown-menu" id="list">
+              <li><a href="#">Deal 1 </a></li>
+              <li><a href="#">Deal 2</a></li>
+              <li><a href="#">Deal 3</a></li>
+            </ul>
+          </li>      
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Gallery</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  </div>
+    <div id="myCarousel" class="carousel slide container-fluid" data-ride="carousel" id="div0">
+      <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+
+    <div>
+      <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="andaman.jpg" alt="andaman" width="500px" height="200px" id="slideImage">
+        <div class="carousel-caption">
+        <h3>Andaman</h3>
+        <p>The atmosphere has a touch of Florence.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="Alappuzha.jpg" alt="Alappuzha" width="500px" height="200px" id="slideImage">
+        <div class="carousel-caption">
+        <h3>Alappuzha</h3>
+        <p>The atmosphere has a touch of happiness.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="tungnath-UK.jpg" alt="tungnath-UK" width="500px" height="200px" id="slideImage">
+        <div class="carousel-caption">
+        <h3>Tungnath</h3>
+        <p>Beauty of uttrakhand.</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="kodaikanal.jpg" alt="kodaikanal" width="500px" height="200px" id="slideImage">
+        <div class="carousel-caption">
+        <h3>kodaikanal</h3>
+        <p>Beatiful nature.</p>
+        </div>
+      </div>
+  </div>
+
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+ 
+  </div>
+  </div>
+
+
+  <div class="row" id="div3">
+    <form class="form-horizontal">
+    <button type="button" class="btn btn-md btn-info" id="more" data-toggle="dropdown">More About Incredible India</button>
+     <h4 id="hideshow"> Incredible India tours present India at its best. We have years of experience in travelling across the Indian subcontinent and we are fully equipped to offer you best of Indian Experiences. India Tourism offers a number of possibilities for theme tours, cultural tours, Luxury India Tours, Rajasthan Tours, Kerala Tours, India with Taj, India wildlife tours, Golden Triangle Tours, India with Himalayas, Ayurveda and Spa Tour, India Beaches and Festival Tours, honeymoon tours to India and lots more.
+     </h4>
+     </form>
+
+  </div>
+
+  <div class="row" id="div4">
+  <h2>Amazing features</h2>
+  <h5>What makes this theme so special! Checkout its amazing features.</h5>
+  </div>
+
+
+  <div class="row" id="div5">
+    <div class="col-md-4"></div>
+    <div class="col-md-offset-4"></div>
+    <div class="col-md-offset-4"></div>
+  </div>
+
+  <div class="row" id="div6">
+    <div class="col-md-4"> <span class="glyphicon glyphicon-gift"></span>
+    <p><h4>Many Color Schemes</h4><h6>Change complete theme colors in just two clicks.</h6></p>
+     </div>
+    <div class="col-md-4"> <span class="glyphicon glyphicon-ok"></span>     
+    <p><h4>Fully Responsive</h4><h6>Themes specially optimized for mobiles,tablets and desktops.</h6></p>
+    </div>
+    <div class="col-md-4"> <span class="glyphicon glyphicon-move"></span>     
+    <p><h4>Drag and Drop Builder</h4><h6>Build any complex layout without knowing html.</h6></p>
+    </div> 
+  </div>
+
+  <div class="row" id="div7">
+    <p><h3>Explore out INDIA</h3><h4>Look at these beautiful places</h4></p>
+  </div>
+  <div class="row" id="div8">
+    <div class="col-md-3" > <img src="rameswaram.jpg"> <button class="btn btn-info">Know More >> </button></img></div>
+    <div class="col-md-3"> <img src="tea-fields.jpg"> <button class="btn btn-info">Know More >> </button> </img></div>
+    <div class="col-md-3"> <img src="Jodhpur.jpg"> <button class="btn btn-info">Know More >> </button> </img></div>
+    <div class="col-md-3"> <img src="dal-lake.jpg"> <button class="btn btn-info">Know More >> </button> </img></div>
+  </div>
+
+
+<div id="div9" class="container">
+    Leave your comment here !!
+    <form class="form-inline container" id="f1">
+      <label>Username : </label>
+      <input type="text" id="user" class="form-control">
+      <button class="btn btn-success" id="comment">Leave Comment</button>
+    </form>
+  </div>
+
+
+  <div id="div10">
+  Log In     <form class="form form-horizontal" id="f2">
+      <label>Username : </label>
+      <input type="text" id="user" class="form-control">
+      <label>Password : </label>
+      <input type="Password" id="pwd" class="form-control">
+      <button class="form-control btn btn-success" id="submit" type="button">Submit</button>
+    </form>
+  </div>
+
+</div>
+</body>
+</html>
